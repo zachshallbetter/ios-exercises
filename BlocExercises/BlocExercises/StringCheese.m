@@ -4,7 +4,7 @@
 //
 //  Created by Aaron on 6/9/14.
 //
-//
+///Users/zachshallbetter/Projects/Bloc/ios-exercises/BlocExercises/BlocExercises/StringCheeseTests.m
 
 #import "StringCheese.h"
 
@@ -12,17 +12,18 @@
 
 - (NSString *) favoriteCheeseStringWithCheese:(NSString *)cheeseName {
     /* WORK HERE */
-    return nil;
+    return [NSString stringWithFormat:@"My favorite cheese is %@.", cheeseName];
 }
 
 - (NSString *) cheeseNameWithoutCheeseSuffix:(NSString *)cheeseName {
-    /* WORK HERE */
-    return nil;
+    NSMutableString *cheeseStatement = [NSMutableString stringWithString:cheeseName];
+    cheeseStatement = [[cheeseStatement stringByReplacingOccurrencesOfString:@" cheese" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [cheeseStatement length])] mutableCopy];
+    return cheeseStatement;
 }
 
 - (NSString *) numberOfCheesesStringWithCheeseCount:(NSUInteger)cheeseCount {
-    /* WORK HERE */
-    return nil;
+    NSString *cheesePlurality = cheeseCount > 1 ? @"cheeses" : @"cheese";
+    return [NSString stringWithFormat:@"%ld %@", (long)cheeseCount, cheesePlurality];
 }
 
 @end

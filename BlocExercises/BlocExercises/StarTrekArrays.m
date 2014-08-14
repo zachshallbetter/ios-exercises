@@ -11,23 +11,32 @@
 @implementation StarTrekArrays
 
 - (NSArray *) arrayOfStarTrekCharactersFromString:(NSString *)characterString {
-    /* WORK HERE */
-    return @[];
+    NSArray *TNGCharacterArray = [characterString componentsSeparatedByString:@";"];
+    return TNGCharacterArray;
 }
 
 - (NSString *) stringOfStarTrekCharactersFromArray:(NSArray *)characterArray {
-    /* WORK HERE */
-    return @"";
+    NSString *TNGCharacterString = [characterArray componentsJoinedByString:@";"];
+    return TNGCharacterString;
 }
 
 - (NSArray *) alphabeticallySortedStarTrekCharactersFromArray:(NSArray *)characterArray {
-    /* WORK HERE */
-    return @[];
+
+    NSMutableArray *TNGCharacterArray = [characterArray mutableCopy];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:nil ascending:YES];
+    [TNGCharacterArray sortUsingDescriptors:@[sortDescriptor]];
+    
+    return TNGCharacterArray;
 }
 
 - (BOOL) characterArrayContainsWorf:(NSArray *)characterArray {
-    /* WORK HERE */
-    return NO;
+    NSMutableArray *TNGCharacterArray = [characterArray mutableCopy];
+    
+    NSPredicate *WorfAround = [NSPredicate predicateWithFormat:@"SELF LIKE[c] 'worf'"];
+    [TNGCharacterArray filterUsingPredicate:WorfAround];
+
+    return TNGCharacterArray;
 }
 
 @end

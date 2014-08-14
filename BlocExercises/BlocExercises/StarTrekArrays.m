@@ -32,11 +32,11 @@
 
 - (BOOL) characterArrayContainsWorf:(NSArray *)characterArray {
     NSMutableArray *TNGCharacterArray = [characterArray mutableCopy];
+    NSPredicate *containsWorf = [NSPredicate predicateWithFormat:@"SELF LIKE[c] '*worf*'"];
     
-    NSPredicate *WorfAround = [NSPredicate predicateWithFormat:@"SELF LIKE[c] 'worf'"];
-    [TNGCharacterArray filterUsingPredicate:WorfAround];
+    [TNGCharacterArray filterUsingPredicate:containsWorf];
 
-    return TNGCharacterArray;
+    return TNGCharacterArray.count;
 }
 
 @end

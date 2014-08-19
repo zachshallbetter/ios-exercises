@@ -36,7 +36,7 @@
     
     [TNGCharacterArray filterUsingPredicate:containsWorf];
 
-    return TNGCharacterArray.count;
+    return (BOOL)TNGCharacterArray.count;
 }
 
 @end

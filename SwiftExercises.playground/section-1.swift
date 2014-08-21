@@ -60,10 +60,13 @@ let picard = [
 
 let characters = [worf, picard]
 
-func favoriteDrinksArrayForCharacters(characters:Array<Dictionary<String, String>>) -> Array<String> {
-    // return an array of favorite drinks, like ["prune juice", "tea, Earl Grey, hot"]
-    // WORK HERE
-    return []
+func favoriteDrinksArrayForCharacters(characters:[[String:String]]) -> [String] {
+    var drinks = [String]();
+    for i in characters {
+        drinks.append(i["favorite drink"]!)
+    }
+
+    return drinks
 }
 
 let favoriteDrinks = favoriteDrinksArrayForCharacters(characters)
@@ -78,11 +81,13 @@ Functions
 
 // Make a function that inputs an array of strings and outputs the strings separated by a semicolon
 
-let strings = ["milk", "eggs", "bread", "challah"]
+let items = ["milk", "eggs", "bread", "challah"]
 
-// WORK HERE - make your function and pass `strings` in
+func combineArray(items: [String]) -> String {
+    return ";".join(items)
+}
 
-let expectedOutput = "milk;eggs;bread;challah"
+let itemOutput = combineArray(items)
 
 /*
 
@@ -92,5 +97,7 @@ Closures
 
 let cerealArray = ["Golden Grahams", "Cheerios", "Trix", "Cap'n Crunch OOPS! All Berries", "Cookie Crisp"]
 
-// Use a closure to sort this array alphabetically
-// WORK HERE
+var reversed = sorted(cerealArray, { s1, s2 in return s1 > s2 })
+
+
+

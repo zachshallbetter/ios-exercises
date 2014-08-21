@@ -7,8 +7,8 @@ Strings
 */
 
 func favoriteCheeseStringWithCheese(cheese: String) -> String {
-    // WORK HERE
-    return cheese
+    let favorite = "My favorite cheese is " + cheese
+    return favorite
 }
 
 let fullSentence = favoriteCheeseStringWithCheese("cheddar")
@@ -20,11 +20,11 @@ Arrays & Dictionaries
 
 */
 
-let numberArray = [1, 2, 3, 4]
+let numberArray = [1, 2, 3, 4, 5]
 // Add 5 to this array
 // WORK HERE
 
-let numberDictionary = [1 : "one", 2 : "two", 3 : "three", 4 : "four"]
+let numberDictionary = [1 : "one", 2 : "two", 3 : "three", 4 : "four", 5 : "five"]
 // Add 5 : "five" to this dictionary
 // WORK HERE
 
@@ -35,10 +35,15 @@ Loops
 */
 
 // Use a closed range loop to print 1 - 10, inclusively
-// WORK HERE
+for i in 1...10 {
+    println(i)
+}
 
 // Use a half-closed range loop to print 1 - 10, inclusively
-// WORK HERE
+for j in 1..<10 {
+    println(j)
+}
+
 
 let worf = [
     "name": "Worf",

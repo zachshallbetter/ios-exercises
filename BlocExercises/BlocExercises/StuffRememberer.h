@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface StuffRememberer : NSObject
-
+@property (nonatomic, strong) NSMutableArray *arraytoRememberLater;
+@property (nonatomic, copy) NSMutableArray *arraytoCopyLater;
+@property (assign) CGFloat floattoRememberLater;
 /*
  
  In this class, there are three pairs of methods.
@@ -32,7 +34,6 @@
  @param arrayToRemember A mutable array.
  */
 - (void) rememberThisArrayForLater:(NSMutableArray *)arrayToRemember;
-
 /**
  Provides the remembered mutable array.
  

@@ -29,6 +29,10 @@
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
+- (void) testThatNumberDoublingWorks {
+    NSNumber *bigNumber = [self.handler numberThatIsTwiceAsBigAsNumber:@8];
+    XCTAssertEqualObjects(bigNumber, @16, @"8 * 2 = 16");
+}
 
 - (void)testThatArrayOfNumbersWorks {
     NSArray *expectedArray = @[@5, @6, @7, @8];
@@ -41,9 +45,5 @@
     XCTAssertEqual(lowestNumber, -4, @"Lowest number should be -4.");
 }
 
-- (void) testThatNumberDoublingWorks {
-    NSNumber *bigNumber = [self.handler numberThatIsTwiceAsBigAsNumber:@8];
-    XCTAssertEqualObjects(bigNumber, @16, @"8 * 2 = 16");
-}
 
 @end

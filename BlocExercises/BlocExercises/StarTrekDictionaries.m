@@ -18,7 +18,6 @@
     
     NSMutableArray *newArray = [[NSMutableArray alloc] init];
 
-
     for (id object in charactersArray) {
         NSString *drink = [object objectForKey:@"favorite drink"];
         [newArray addObject:drink];
